@@ -1,0 +1,13 @@
+table{
+  border: 2px solid black;
+}
+
+th{
+  border: 2px solid black;
+  width: 80px;
+}
+
+td{
+  border: 2px solid black;
+  width: 80px;
+}

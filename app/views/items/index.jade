@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title eCommerce
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    h1 eCommerce
+    nav
+      ul
+        li: a(href='/') Home
+        li: a(href='/about') About
+        li: a(href='/faq') Faq
+
+    h2 About Page!
+    table
+      thead
+        th Name
+        th Dimensions 
+        th Weight
+        th Quantity
+        th MSRP
+        th % off
+        th Cost
+      each item in items
+        tr(style='background-color:#{item.color};')
+          td
+            li: a(href='/items/#{item._id}')=item.name
+          td
+            div length: #{item.dimensions.l}
+            div width: #{item.dimensions.w}
+            div height: #{ item.dimensions.h}
+          td= item.weight
+          td= item.qty
+          td= item.msrp
+          td= item.percentOff
+          td= item.cost()

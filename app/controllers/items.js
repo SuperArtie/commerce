@@ -14,3 +14,22 @@ exports.create = function(req, res){
   console.log(req.body);
 };
 
+exports.index = function(req, res){
+  Item.all(function(items){
+    res.render('items/index.jade', {items:items});
+  });
+};
+
+exports.show = function(req, res){
+  var id = req.params.id;
+  Item.findById(id.toString(), function(item){
+    res.render('items/show', {item:item});
+  });
+};
+
+exports.destroy = function(req, res){
+  var id = req.params.id;
+  Item.deleteById(id.toString(), function(){
+    res.redirect('/items');
+  });
+};
