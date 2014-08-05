@@ -18,5 +18,6 @@ html
         li width: #{item.dimensions.w}
         li height: #{item.dimensions.h}
         li weight: #{item.weight}
-      form(method='post', action='/items/#{item._id}/delete')
+      form(method='post', action='/items/#{item._id}')
+        input(type='hidden', name='_method', value='delete')
         button Delete!!!!!
